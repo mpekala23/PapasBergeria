@@ -1,12 +1,40 @@
 {
   "compilerOptions": {
+    "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "jsx": "react-native",
-    "lib": ["dom", "esnext"],
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "lib": ["es2019"],
     "moduleResolution": "node",
     "noEmit": true,
+    "strict": true,
+    "target": "esnext",
+    "baseUrl": ".",
     "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "strict": true
-  }
+    "paths": {
+      "@*": ["src/*"],
+      "types": ["./src/types"],
+      "@api/*": ["src/api/*"],
+      "@assets/*": ["src/assets/*"],
+      "@common/*": ["src/common/*"],
+      "@components/*": ["src/components/*"],
+      "@i18n/*": ["src/i18n/*"],
+      "@navigations/*": ["src/navigations/*"],
+      "@notifications/*": ["src/notifications/*"],
+      "@store/*": ["src/store/*"],
+      "@styles/*": ["src/styles/*"],
+      "@utils/*": ["src/utils/*"],
+      "@views/*": ["src/views/*"]
+    },
+    "resolveJsonModule": true
+  },
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "node_modules/expo/build"
+  ],
+  "includes": ["./src/typings.d.ts"],
+  "typeRoots": ["node_modules/@types", "./typings.d.ts"]
 }
